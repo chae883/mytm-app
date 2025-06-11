@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: mytm-frontend
+    env: react
+    repo: https://github.com/YOUR_USERNAME/YOUR_REPONAME # ★★ ここのURLを書き換えてください ★★
+    rootDir: frontend
+    branch: main
+    buildFilter:
+      paths:
+      - frontend/**
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: "./build"
+  - type: worker
+    name: mytm-backend
+    env: node
+    repo: https://github.com/YOUR_USERNAME/YOUR_REPONAME # ★★ ここのURLを書き換えてください ★★
+    rootDir: backend
+    branch: main
+    buildFilter:
+      paths:
+      - backend/**
+    buildCommand: "npm install"
+    startCommand: "node index.js"
+    envVars:
+      - key: DISCORD_BOT_TOKEN
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: USER_ID_TO_MONITOR
+        sync: false
+      - key: GOOGLE_API_CREDENTIALS
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT
+        sync: false
