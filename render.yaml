@@ -2,7 +2,7 @@ services:
   - type: web
     name: mytm-frontend
     env: react
-    repo: https://github.com/YOUR_USERNAME/YOUR_REPONAME # ★★ ここのURLを書き換えてください ★★
+    repo: https://github.com/chae883/mytm-app/tree/main # ★★ ここのURLを書き換えてください ★★
     rootDir: frontend
     branch: main
     buildFilter:
@@ -13,7 +13,7 @@ services:
   - type: worker
     name: mytm-backend
     env: node
-    repo: https://github.com/YOUR_USERNAME/YOUR_REPONAME # ★★ ここのURLを書き換えてください ★★
+    repo: https://github.com/chae883/mytm-app/tree/main # ★★ ここのURLを書き換えてください ★★
     rootDir: backend
     branch: main
     buildFilter:
